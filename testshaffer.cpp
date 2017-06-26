@@ -1,11 +1,6 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   testshaffer.cpp
+* File:   testshaffer.cpp
  * Author: mposypkin
  *
  * Created on June 26, 2017, 4:34 PM
@@ -24,10 +19,9 @@ using namespace snowgoose::interval;
 template <class T> Expr<T> ShafferF1()
 {
 	Expr<T> x;
-	auto y = sqr(x);
+	auto y = sqr(x[0]);
 	return y;
 }
-
 
 /*
  * 
@@ -35,7 +29,9 @@ template <class T> Expr<T> ShafferF1()
 int main(int argc, char** argv) {
 
     auto sf1 = ShafferF1<double>();
-    std::cout <<  sf1 << "\n";
+    std::cout << "expression " <<  sf1 << "\n";
+    
+    auto res = sf1.calc({3}, FuncAlg<double>());
+    std::cout << "result " << res << "\n";
     return 0;
 }
-
