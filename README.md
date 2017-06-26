@@ -1,2 +1,2 @@
 # multitest
-project to test multiobjective optimization
+Project to test multiobjective optimization.
